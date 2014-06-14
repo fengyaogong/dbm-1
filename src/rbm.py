@@ -57,8 +57,6 @@ class FirstLayerRBM:
             errsum = 0
 
             for batch in range(self.nBatches):
-                print "Epoch: {}, Batch: {}".format(self.currentEpoch, batch)
-                
                 #Bias for every example in one batch
                 bVisibleOne = np.tile(self.bVisible, (self.nExamples, 1))
                 bHiddenOne = np.tile(2 * self.bHidden, (self.nExamples, 1))
@@ -110,7 +108,7 @@ class FirstLayerRBM:
                 self.bHidden = self.bHidden + self.bHiddenInc
         ########################## End of weights and biases updates ###########################
 
-            print "End of epoch: {}, errsum: {}, err: {}".format(epoch, errsum, err)
+            print "End of epoch: {}, errsum: {}".format(epoch, errsum)
 
 
 
