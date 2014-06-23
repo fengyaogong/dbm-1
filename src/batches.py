@@ -1,6 +1,7 @@
 import numpy as np
 
 def getBatches(batchSize, digits, data, labels):
+    np.random.seed(121)
     targets = []
     target = np.zeros(len(digits))
     
@@ -15,7 +16,6 @@ def getBatches(batchSize, digits, data, labels):
     dataLen = len(data)
 
     print "The length of the data set is: {}".format(dataLen)
-    np.random.seed(0)
     randomOrder = np.random.permutation(dataLen)
     numBatches = dataLen / batchSize
     numFeatures = len(data[0][0]) * len(data[0])
